@@ -1,0 +1,14 @@
+# A student brings the acid first, ignores the warning and pours it, then
+# brings water and pours it into the acid.
+sop: configs/sop/dilute_acid.yaml
+lab: configs/bottles.yaml
+events:
+  - [0.5, enter, beaker_A]
+  - [1.0, enter, acid_conc]
+  - [2.0, cap_open, acid_conc]
+  - [4.0, pour, acid_conc, beaker_A]
+  - [5.0, leave, acid_conc]
+  - [6.0, enter, water]
+  - [8.0, pour, water, beaker_A]
+  - [9.0, leave, water]
+end: 40

@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+samples/session*
+*.mp4
+!samples/demo*.mp4
+configs/camera.yaml
+tags.png
+tags.pdf
+.last_camera_url
+samples/*.events.jsonl
+samples/*.report.json
+recordings/

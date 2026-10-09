@@ -1,0 +1,27 @@
+name: Dilute concentrated acid
+description: >
+  Add water to the beaker first, then add the acid to the water.
+  Adding water to concentrated acid can boil and splash.
+
+# Event thresholds (tune per camera setup)
+pour_angle_deg: 60
+pour_distance_cm: 20  # body tag to container tag while pouring (real runs: 12-15 cm)
+min_frames: 5
+cap_open_timeout_s: 30
+
+steps:
+  - id: add_water
+    action: pour
+    reagent: water
+    into: beaker_A
+  - id: add_acid
+    action: pour
+    reagent: acid_conc
+    into: beaker_A
+    after: add_water
+
+forbidden:
+  - action: pour
+    reagent: water
+    into_containing: acid_conc
+    message: "Never add water to concentrated acid. Add acid to water."

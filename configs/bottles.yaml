@@ -1,0 +1,40 @@
+# Maps AprilTag IDs (family tag36h11) to reagent bottles and containers.
+# body_tag: tag stuck on the bottle body (identity + tilt)
+# cap_tag:  small "flag" tag fixed to the cap (cap is "open" when it moves away from the body)
+# Sizes are the edge of the black square, as printed by tools/generate_tags.py.
+tag_family: tag36h11
+tag_size_m: 0.030
+cap_tag_size_m: 0.020
+
+bottles:
+  - name: water
+    label: "Distilled water"
+    body_tag: 1
+    cap_tag: 2
+  - name: acid_conc
+    label: "Concentrated acid"  # demo: colored water
+    body_tag: 3
+    cap_tag: 4
+    hazard: corrosive
+  - name: bleach
+    label: "Bleach"  # demo: colored water
+    body_tag: 5
+    cap_tag: 6
+    hazard: oxidizer
+
+containers:
+  - name: beaker_A
+    label: "Beaker A"
+    tag: 10
+  - name: beaker_B
+    label: "Beaker B"
+    tag: 11
+
+# Optional reference tag fixed in the scene, facing the camera (e.g. taped to a
+# wall, a box or a book that never moves). Positions are then measured relative
+# to it, so a bumped camera is not mistaken for every bottle moving.
+table_tag: 20
+
+# Pairs that must never end up in the same container.
+incompatible:
+  - [bleach, acid_conc]

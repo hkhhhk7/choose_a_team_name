@@ -1,0 +1,13 @@
+# turtle's case: water done, then the acid and the wrong beaker come in.
+sop: configs/sop/dilute_acid.yaml
+lab: configs/bottles.yaml
+events:
+  - [0.5, enter, beaker_A]
+  - [1.0, enter, water]
+  - [3.0, pour, water, beaker_A]
+  - [4.0, leave, water]
+  - [4.5, leave, beaker_A]
+  - [6.0, enter, acid_conc]
+  - [6.5, enter, beaker_B]
+  - [9.0, pour, acid_conc, beaker_B]
+end: 20
